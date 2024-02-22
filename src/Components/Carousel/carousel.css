@@ -24,10 +24,6 @@ body {
 .swiper-slide {
   text-align: center;
   font-size: 18px;
-  /* background: #fff; */
-
-  /* Center slide text vertically */
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -35,4 +31,10 @@ body {
 .swiper-slide img {
   display: block;
   object-fit: cover;
+}
+
+.carousel-image {
+  width: 80%; 
+  height: auto; 
+  max-height: 210px;
 }
