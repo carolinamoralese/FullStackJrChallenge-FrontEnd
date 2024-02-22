@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { petitionAnime } from "../../services/petition";
+import Carousel from "../../Components/Carousel/Carousel";
 
 function Anime() {
   const [animes, setAnimes] = useState(null);
+
 
   useEffect(() => {
     petitionAnime().then((responseJson) => {
@@ -13,10 +15,11 @@ function Anime() {
   return (
     <div className="container mx-auto">
       <h1 className="text-2xl text-center font-bold mb-8 p-8">Anime para Todos los Gustos</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8">
+      {animes ? <Carousel animes={animes.slice(10,20)} /> : null}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-12 lg:grid-cols-4 xl:grid-cols-5 gap-8">
         {animes ? (
           animes.map((item) => (
-            <div key={item.mal_id} className="bg-gray-200 p-4 rounded-lg cursor-pointer transform transition-transform hover:scale-110">
+            <div key={item.mal_id} className="bg-gray-200 p-4  rounded-lg cursor-pointer transform transition-transform hover:scale-110">
               <img
                 src={item.images.webp.image_url}
                 alt={item.title}

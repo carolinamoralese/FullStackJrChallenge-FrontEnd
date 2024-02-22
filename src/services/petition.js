@@ -6,6 +6,7 @@ export function petitionAnime(){
         if(!response.ok){
             throw new Error("Ocurrió un error: " + response.statusText)
         }
+        console.log(response);
         return response.json()
     })
     .then((response) => {
