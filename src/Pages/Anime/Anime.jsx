@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { petitionAnime } from "../../services/petition";
 import Carousel from "../../Components/Carousel/Carousel";
 import AnimeList from "../../Components/AnimeList/AnimeList";
-import { FaSearch } from "react-icons/fa";
+
 
 function Anime() {
   const [animes, setAnimes] = useState(null);
@@ -19,7 +19,8 @@ function Anime() {
   };
 
   return (
-    <div className="container mx-auto">
+   
+    <div className="container mx-auto ">
       <h1 className="text-2xl text-center font-bold mb-8 p-8">
         Anime para Todos los Gustos
       </h1>
@@ -29,10 +30,9 @@ function Anime() {
           placeholder="Buscar película..."
           value={searchTerm}
           onChange={handleSearch}
-          className="px-4 py-2 mb-4 rounded-lg border"
+          className="px-4 py-2 mb-10 rounded-lg border"
         />
         <div className="p-2">
-          <FaSearch />
         </div>
       </div>
 
