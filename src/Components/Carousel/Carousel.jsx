@@ -36,6 +36,7 @@ export default function Carousel(animes) {
                 />
                 <div className="mt-2">
                   <h2 className="text-lg ">{item.title}</h2>
+                  <p className="text-xs">{item.recommendation}</p>
                 </div>
               </div>
             </SwiperSlide>

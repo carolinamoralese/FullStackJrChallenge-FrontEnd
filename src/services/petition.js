@@ -10,8 +10,8 @@ export function petitionAnime(){
         return response.json()
     })
     .then((response) => {
-        console.log(response.data);
-        return response.data;
+        console.log(response);
+        return response;
     })
     .catch((error) => {
         console.error("Error al realizar la solicitud:", error)

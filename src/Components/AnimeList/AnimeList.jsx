@@ -1,10 +1,10 @@
 import React from "react";
 import { FaExclamationCircle } from "react-icons/fa";
 
-function AnimeList({ animes, searchTerm }) {
+function AnimeList({ animes, searchAnime }) {
   const filteredAnimes = animes
     ? animes.filter((item) => {
-        return item.title.toLowerCase().includes(searchTerm.toLowerCase());
+        return item.title.toLowerCase().includes(searchAnime.toLowerCase());
       })
     : [];
 
@@ -23,14 +23,13 @@ function AnimeList({ animes, searchTerm }) {
             />
             <div className="mt-2">
               <h2 className="text-lg font-semibold">{item.title}</h2>
-              <p className="text-sm text-gray-600">{item.synopsis}</p>
+              <p className="text-sm text-gray-600">{item.recommendation}</p>
             </div>
           </div>
         ))
       ) : (
-        <div className="flex justify-center items-center">
-          <FaExclamationCircle className="mr-2" />{" "}
-          {/* Ajusta el margen derecho según sea necesario */}
+        <div className="flex justify-center items-centergit">
+          <FaExclamationCircle className="mr-2"/>{" "}
           <p className="text-center">No se encontraron resultados.</p>
         </div>
       )}
